@@ -1,0 +1,31 @@
+/* Universal Box Sizing with Inheritance */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Redefinição das margens e preenchimentos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Definição raiz do corpo da fonte para 10px(default 16px) */
+:root {
+  font-size: 0.625em; /* 10px ÷ 16px = 0.625em */
+}
+/* Definição do corpo da fonte para 16px, porém. relativo ao documento raiz(root).
+ Assim a escala trabalha de forma proporcinal ao corpo padrão do root. */
+body {
+  font: 400 1.6rem "Poppins", sans-serif;
+  background: #f0f2f5;
+}
+
+p {
+  line-height: 1.5;
+}
