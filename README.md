@@ -1,23 +1,14 @@
 # Dev.Finance$ - [Rodar a Aplicação](https://ppsattos.github.io/devfinances/)
 
-DevFinances, mini sistema financeiro com HTML, CSS e JS. Maratona Discover 1º edição da @rocketseat.
+DevFinances, mini sistema financeiro com HTML, CSS e JS. Maratona Discover 1º edição da @rocketseat ministrado por Mayk Brito.
 
-## Aula 1 - Principais Pontos
+## Aula 1 - Revisão
 
-#### Soft Skills
+Nesta primeira construimos o HTML e CSS base. No decorrer da aula Maykao explicou rapidamente os fundamentos do HTML e CSS levantando pontos importantes
+como acessibilidade e a semântica da página. 
 
-- [x] Organização e estudos
-  - [x] Foco, Local, Aprendizado ativo, Revisões, Pesquisas
-- [x] Mentalidade
-  - [x] Tempo, Descanso, Persistência, Síndrome do impostor
-  - [x] Você gosta do que está fazendo? Yeah! Então siga sua jornada.
+Ou seja, aplicar as tags de forma coerente ao seu contéudo tornando a página mais semântica e acessível ao maior número de pessoas possível. E claro também melhorando a forma como a página é lida por outros user agents como por ex. motores de busca, leitores de tela, entre outros.
 
-#### Hard Skills (prática)
+Assisti os conteúdos da discover propostos pelo Maykao para fazer a revisão e preparação para próxima aula 02. Esses conteúdos foram fundamentais para aprofundizar meu aprendizado. O que não entendi direito procurei na WEB e principalmente na documentação MDN.
 
-- [x] HTML
-  - [x] Estrutura base
-  - [x] Tags semânticas
-- [x] CSS
-  - [x] Box Model
-  - [x] Fontes e Cores
-  - [x] Seletores, Valores, Classes e IDs
+Fiz pequenas alterações nessa aula como box-sizing com herança e tamanho da fonte padrão do documento de 16px alterei para 0.625em(10px) e criei um arquivo separado reset.css para fazer esse reset base da página. Acrescetei também mais variáveis para trabalhar com com cores e sua reutilização na página.
