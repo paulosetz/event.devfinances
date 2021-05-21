@@ -12,3 +12,9 @@ Ou seja, aplicar as tags de forma coerente ao seu contéudo tornando a página m
 Assisti os conteúdos da discover propostos pelo Maykao para fazer a revisão e preparação para próxima aula 02. Esses conteúdos foram fundamentais para aprofundizar meu aprendizado. O que não entendi direito procurei na WEB e principalmente na documentação MDN.
 
 Fiz pequenas alterações nessa aula como box-sizing com herança e tamanho da fonte padrão do documento de 16px alterei para 0.625em(10px) e criei um arquivo separado reset.css para fazer esse reset base da página. Acrescetei também mais variáveis para trabalhar com com cores e sua reutilização na página.
+
+## Aula 2 - Revisão
+
+Nessa aula finalizamos o HTML/CSS. Foram aplicados várias técnicas e tricks do CSS para construção do layout. Maykao passou por vários assuntos desde imagens, acessibilidade, disposição dos elementos, responsividade e formulários. Construimos também um janela modal e através do JavaScript adicionamos a funcionalidade para abrir e fechar essa janela. 
+
+Agora é fazer o curso guia estelar JavaScript para próxima aula 03.

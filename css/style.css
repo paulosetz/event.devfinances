@@ -5,7 +5,7 @@
    --primary-color-light: #d1c4e9;
    --primary-color-text: #ffffff;
    --accent-color: #4caf50;
-   --accent-color2: #e74c3c;
+   --accent-color2: #e83f5b;
    --primary-text-color: #363f5f;
    --secondary-text-color: #969cb3;
    --divider-color: #bdbdbd;
@@ -16,18 +16,82 @@
    margin: 0 auto;
 }
 
+.sr-only {
+   position: absolute;
+   text-indent: -9999px;
+   /* 
+   Como já tiramos o elemto do fluxo não precisamos fazer 
+   esse css-trick abaixo. Código acima já resolve. Clip está "deprecated".
+   Proposto pelo Maykao
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rec(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0; 
+   */
+}
+
 /* Titles =========================== */
 h2 {
-   margin-top: 5.12rem;
-   margin-bottom: 1.28rem;
+   margin-top: 3.2rem;
+   margin-bottom: 0.8rem;
    color: var(--primary-text-color);
    font-weight: normal;
+}
+
+/* Links & Buttons =========================== */
+a {
+   color: var(--secondary-text-color);
+   text-decoration: none;
+}
+
+
+a:hover {
+   color: var(--primary-text-color);
+}
+
+button{
+   width: 100%;
+   height: 50px;
+   border: none;
+   color: var(--primary-color-text);
+   background-color: var(--primary-color-dark);   
+   border-radius: .25rem;
+   cursor: pointer;
+}
+
+button:hover{
+   background-color: var(--primary-color);
+}
+
+.button.new {
+   display: inline-block;
+   margin-bottom: 0.8rem;
+}
+
+.button.cancel{
+   color: var(--accent-color2);
+   border: 2px solid var(--accent-color2);
+   border-radius: 0.2rem;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: .6;
+}
+
+.button.cancel:hover{
+   opacity: 1;
 }
 
 /* Header =========================== */
 header {
    background: var(--primary-color);
-   padding: 0 0 16rem;
+   padding: 0 0 10rem;
    text-align: center;
 }
 
@@ -35,12 +99,12 @@ header::before {
    content: "";
    display: block;
    width: 100%;
-   height: 3.2rem;
+   height: 2rem;
    background-color: var(--primary-color-dark);
 }
 
 #logo {
-   margin-top: 1.6rem;
+   margin-top: 1rem;
    color: var(--primary-color-text);
    font-weight: 200;
    letter-spacing: 0.1rem;
@@ -55,7 +119,7 @@ header::before {
 
 /* Balance =========================== */
 #balance {
-   margin-top: -12.8rem;
+   margin-top: -8rem;
 }
 
 #balance h2 {
@@ -66,21 +130,24 @@ header::before {
 /* Cards =========================== */
 .card {
    background: #fff;
-   padding: 2.4rem 3.2rem;
-   margin-bottom: 3.2rem;
+   padding: 1.5rem 2rem;
+   margin-bottom: 2rem;
    border-radius: 0.4rem;
    color: var(--primary-text-color);
 }
 
 .card h3 {
-   font-size: 1.6rem;
+   font-size: 1rem;
    font-weight: normal;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
 .card p {
-   margin-top: 1.6rem;
-   font-size: 3.2rem;
-   /* line-height: 4.8rem; */ /* Já estou herdando da folha reset */
+   margin-top: 1rem;
+   font-size: 2rem;
+   /* line-height: 3rem; */ /* Já estou herdando da folha reset */
 }
 
 .card.total {
@@ -89,9 +156,14 @@ header::before {
 }
 
 /* Transaction =========================== */
+#transaction {
+   width: 100%;
+   overflow-x: auto;
+}
+
 #data-table {
    width: 100%;
-   border-spacing: 0 0.8rem;
+   border-spacing: 0 0.5rem;
    color: var(--secondary-text-color);
 }
 
@@ -100,8 +172,13 @@ table tbody tr td:first-child {
    border-radius: 0.5rem 0 0 0.5rem;
 }
 
+table thead tr th:last-child,
+table tbody tr td:last-child {
+   border-radius: 0 0.5rem 0.5rem 0;
+}
+
 table tbody tr {
-   opacity: 0.7;
+   opacity: 0.6;
 }
 
 table tbody tr:hover {
@@ -111,7 +188,7 @@ table tbody tr:hover {
 table th,
 table td {
    background: #fff;
-   padding: 1.6rem 3.2rem;
+   padding: 1rem 2rem;
 }
 
 table th {
@@ -131,10 +208,87 @@ td.expense {
    color: var(--accent-color2);
 }
 
+/* Modal =========================== */
+.modal-overlay {
+   background-color: hsla(0, 0%, 0%, 0.342);
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   opacity: 0;
+   visibility: hidden;
+
+   z-index: 10;
+}
+
+.modal-overlay.active {
+   opacity: 1;
+   visibility: visible;
+}
+
+.modal {
+   background: #f0f2f5;
+   padding: 2.4rem;
+   width: 90%;
+   max-width: 500px;   
+   position: relative;
+   z-index: 20;
+}
+
+/* Form Modal =========================== */
+
+
+#form h2 {
+   margin-top: 0;
+}
+
+.input-group{
+   margin-top: .8rem;
+}
+
+.input-group input {
+   border: none;
+   border-radius: 0.25rem;
+   padding: 0.8rem;
+   width: 100%;
+}
+
+.input-group small{
+   opacity: .4;
+}
+
+.input-group.actions{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+   width: 48%;
+}
+
 /* Footer =========================== */
 footer {
    color: var(--secondary-text-color);
    text-align: center;
-   padding: 6.4rem 0 3.2rem;
+   padding: 4rem 0 2rem;
    opacity: 0.6;
+}
+
+/* Responsive =========================== */
+@media (min-width: 800px) {
+   :root {
+      font-size: 0.875em; /* 14px ÷ 16px = 0.875em */
+   }
+
+   #balance {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+   }
 }

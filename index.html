@@ -8,16 +8,19 @@
    <title>dev.finance$</title>
    <link rel="stylesheet" href="./css/reset.css" />
    <link rel="stylesheet" href="./css/style.css" />
-   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" />
    <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&display=swap"
-      rel="stylesheet">
+      rel="stylesheet" />
 </head>
 
 <body>
    <!-- Page Header -->
    <header>
-      <h1 id="logo">dev.finance$</h1>
+      <!-- <h1 id="logo">dev.finance$</h1> -->
+      <h1 id="logo">
+         <a href="https://github.com/ppsattos/devfinances"><img src="./img/logo.svg" alt="Logo Dev Finance" /></a>
+      </h1>
       <p id="slogan">Seu orçamento na ponta do dedo!</p>
    </header>
 
@@ -25,30 +28,41 @@
    <main class="container">
       <!-- Balance Section -->
       <section id="balance">
-         <h2>Balanço</h2>
+         <h2 class="sr-only">Balanço</h2>
          <div class="card">
-            <h3>Entradas</h3>
+            <h3>
+               <span>Entradas</span>
+               <img src="./img/income.svg" alt="Imagem de entradas" />
+            </h3>
             <p>R$ 5.000,00</p>
          </div>
          <div class="card">
-            <h3>Saídas</h3>
+            <h3>
+               <span>Saídas</span>
+               <img src="./img/expense.svg" alt="Imagem de saídas" />
+            </h3>
             <p>R$ 2.000,00</p>
          </div>
          <div class="card total">
-            <h3>Total</h3>
+            <h3>
+               <span>Total</span>
+               <img src="./img/total.svg" alt="Imagem do total" />
+            </h3>
             <p>R$ 3.000,00</p>
          </div>
       </section>
 
       <!-- Trasanction Section -->
       <section id="transaction">
-         <h2>Transações</h2>
+         <h2 class="sr-only">Transações</h2>
+         <a href="#" class="button new" onclick="Modal.Open()">+ Nova transição</a>
          <table id="data-table">
             <thead>
                <tr>
                   <th scope="col">Descrição</th>
                   <th scope="col">Valor</th>
                   <th scope="col">Data</th>
+                  <th></th>
                </tr>
             </thead>
             <tbody>
@@ -56,26 +70,65 @@
                   <td class="description">Luz</td>
                   <td class="expense">-R$ 500,00</td>
                   <td class="date">15/05/2021</td>
+                  <td>
+                     <img src="./img/minus.svg" alt="Remover transação" />
+                  </td>
                </tr>
                <tr>
                   <td class="description">Criação de WebSite</td>
                   <td class="income">R$ 5.000,00</td>
                   <td class="date">15/05/2021</td>
+                  <td>
+                     <img src="./img/minus.svg" alt="Remover transação" />
+                  </td>
                </tr>
                <tr>
                   <td class="description">Internet</td>
                   <td class="expense">-R$ 100,00</td>
                   <td class="date">15/05/2021</td>
+                  <td>
+                     <img src="./img/minus.svg" alt="Remover transação" />
+                  </td>
                </tr>
             </tbody>
          </table>
       </section>
    </main>
+   <div class="modal-overlay">
+      <div class="modal">
+         <div id="form">
+            <h2>Nova Transação</h2>
+            <form action="">
+               <div class="input-group">
+                  <label for="description" class="sr-only">Descrição</label>
+                  <input type="text" name="description" id="description" placeholder="Descrição" />
+               </div>
+               <div class="input-group">
+                  <label for="amount" class="sr-only">Valor</label>
+                  <input type="number" name="amount" id="amount" step="0.01" placeholder="0,00" />
+                  <small class="help">Use o sinal &minus; (negativo) para despesas e ,
+                     (vírgula) para casas decimais
+                  </small>
+               </div>
+               <div class="input-group">
+                  <label for="date" class="sr-only">Data</label>
+                  <input type="date" name="date" id="date" />
+               </div>
 
+               <div class="input-group actions">
+                  <a href="#" class="button cancel" onclick="Modal.Close()">Cancelar</a>
+                  <button>Salvar</button>
+               </div>
+
+            </form>
+         </div>
+      </div>
+   </div>
    <!-- Page Footer -->
    <footer>
-      <p>dev.finance$ <sup>2021</sup></p>
+      <p>Paulo Santos - dev.finances <sup>2021</sup></p>
    </footer>
+   <script src="./js/script.js"></script>
 </body>
 
 </html>
