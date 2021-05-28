@@ -18,3 +18,8 @@ Fiz pequenas alterações nessa aula como box-sizing com herança e tamanho da f
 Nessa aula finalizamos o HTML/CSS. Foram aplicados várias técnicas e tricks do CSS para construção do layout. Maykao passou por vários assuntos desde imagens, acessibilidade, disposição dos elementos, responsividade e formulários. Construimos também um janela modal e através do JavaScript adicionamos a funcionalidade para abrir e fechar essa janela. 
 
 Agora é fazer o curso guia estelar JavaScript para próxima aula 03.
+
+## Aula 3 - Revisão
+
+Nesta aula trabalhamos com o JavaSCript, ou seja, camada de comportamento. Maykao passou muito coisa msm desde objetos, tipos e estrutura de dados(arrays), estruturas decição if/else e repetição foreach, tratamento de erros com try/catch, funções e propriedades para adicionar funcionalidades como adcicionar/remover transações e fazer o calcula geral de balanço das transações do usuário.
+E ainda trabalhamos com localStorage para armazenamento das transações! E por fim subi o código para github. Show!
